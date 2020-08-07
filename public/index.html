@@ -1,0 +1,432 @@
+<html>
+
+<head>
+  <title>Challenge 21</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+
+<body class="margin">
+
+    <form action="" id="form-search" method="GET">
+      <input type="hidden" id="page" name="page" value="1">
+      <h2>BREAD (browse, read , edit, add, delete)</h2>
+      <h3> Filters</h3>
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="id" name="checkId">
+            <label class="form-check-label" for="id">
+              ID
+            </label>
+          </div>
+        </div>
+
+        <div class="col-10">
+          <div class="form-group">
+            <input type="text" name="id" class="form-control" id="id-search" placeholder="ID" value="">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" name="checkString" type="checkbox" id="string">
+            <label class="form-check-label" name="checkString" for="checkString">
+              String
+            </label>
+          </div>
+        </div>
+        <div class="col-10">
+          <div class="form-group">
+            <input type="text" name="string" class="form-control" id="string-search" placeholder="String">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="checkInteger" id="checkInteger">
+            <label class="form-check-label" for="integer">
+              Integer
+            </label>
+          </div>
+        </div>
+        <div class="col-sm-10">
+          <div class="form-group">
+            <input type="number" class="form-control" id="integer-search" name="integer" placeholder="Integer">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="checkFloat" id="checkFloat">
+            <label class="form-check-label" for="checkFloat">
+              Float
+            </label>
+          </div>
+        </div>
+        <div class="col-10">
+          <div class="form-group">
+            <input type="text" class="form-control" id="float-search" name="float" placeholder="Float">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-2">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="checkDate" id="checkDate">
+            <label class="form-check-label" for="date">
+              Date
+            </label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="form-group">
+            <input type="date" class="form-control" name="startDate" id="start-date" placeholder="masukan date">
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <p class="col offset-2">to</p>
+        <div class="w-100"></div>
+        <div class="col-3 offset-2">
+          <div class="form-group">
+            <input type="date" class="form-control" name="endDate" id="end-date" placeholder="masukan date">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="checkBool" id="boolean">
+            <label class="form-check-label" for="boolean">
+              Boolean
+            </label>
+          </div>
+        </div>
+        <div class="col-10">
+          <div class="form-group">
+            <select name="boolean" id="boolean-search" class="form-control">
+              <option selected disabled> choose the boolean</option>
+              <option name="boolean" class="form-control" value="True">True</option>
+              <option name="boolean" class="form-control" value="False">False</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success">search</button>
+    </form>
+
+  <br> <br>
+
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">STRING</th>
+          <th scope="col">INTEGER</th>
+          <th scope="col">FLOAT</th>
+          <th scope="col">DATE</th>
+          <th scope="col">BOOLEAN</th>
+          <th scope="col">ACTION</th>
+
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+    <br>
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+
+
+      </ul>
+    </nav>
+  </div>
+
+  <h3> Add data </h3>
+  <form id="form-add">
+    <div class="form-group row">
+      <label for="string" class="col-sm-2 col-form-label">String</label>
+      <div class="col-sm-10">
+        <input placeholder="String" class="form-control" id="stringg" name="string" value="">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="integer" class="col-sm-2 col-form-label">Integer</label>
+      <div class="col-sm-10">
+        <input placeholder="Integer" class="form-control" id="integerr" name="integer" value="">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="float" class="col-sm-2 col-form-label">Float</label>
+      <div class="col-sm-10">
+        <input placeholder="Float" class="form-control" id="floatt" name="float" value="">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="date" class="col-sm-2 col-form-label">Date</label>
+      <div class="col-sm-10">
+        <input placeholder="Date" type="date" class="form-control" id="datee" name="date">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="boolean" class="col-sm-2 col-form-label">Boolean</label>
+      <div class="col-sm-10">
+        <select class="custom-select" name="boolean" id="booleann">
+          <option selected disabled>Choose the boolean..</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success">tambah</button>
+  </form>
+
+
+  <h3> Edit data </h3>
+  <form id="form-edit">
+    <div class="form-group row">
+      <label for="id" class="col-sm-2 col-form-label">ID</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="id-edit" name="id" readonly>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="string" class="col-sm-2 col-form-label">String</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="string-edit" name="string">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="integer" class="col-sm-2 col-form-label">Integer</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="integer-edit" name="integer">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="float" class="col-sm-2 col-form-label">Float</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="float-edit" name="float">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="date" class="col-sm-2 col-form-label">Date</label>
+      <div class="col-sm-10">
+        <input type="" class="form-control" id="date-edit" name="date">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="boolean" class="col-sm-2 col-form-label">Boolean</label>
+      <div class="col-sm-10">
+        <select type="" class="custom-select" id="boolean-edit" name="boolean">
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success btn-change">update</button>
+  </form>
+
+  <script type="text/javascript">
+    const API_URL = 'http://localhost:3000/api/'
+
+    $(document).ready(() => {
+      loadData();
+
+      $('#form-add').submit((event) => {
+        event.preventDefault();
+        let stringd = $('#stringg').val()
+        let integerd = $('#integerr').val()
+        let floatd = $('#floatt').val()
+        let dated = $('#datee').val()
+        let booleand = $('#booleann').val()
+        addData({ stringd, integerd, floatd, dated, booleand })
+      })
+
+      $("table tbody").on("click", ".btn-delete", function () {
+        deleteData($(this).attr('data-id'));
+      })
+
+      $('#form-edit').submit((event) => {
+        event.preventDefault();
+        let id = $('#id-edit').val()
+        let stringd = $('#string-edit').val()
+        let integerd = $('#integer-edit').val()
+        let floatd = $('#float-edit').val()
+        let dated = $('#date-edit').val()
+        let booleand = $('#boolean-edit').val()
+        updateData(id, stringd, integerd, floatd, dated, booleand);
+      })
+
+      $('#form-add').submit((event) => {
+        event.preventDefault();
+      })
+
+      $("table tbody").on("click", ".btn-edit", function () {
+        editData($(this).attr('data-id'));
+      })
+
+      $('nav').on("click", 'li', function(event) { //pakai function, karna arrow function tidak bisa membaca (this)
+        event.preventDefault();
+        console.log('test click li')
+        console.log('nilai pageid:',$(this).attr('pageid'))
+        $('#page').val($(this).attr('pageid'))
+        loadData();
+
+      })
+      $('#form-search').submit((event) => {
+        event.preventDefault();
+        $('#page').val(1);
+        loadData()
+      })
+    })
+
+    const loadData = () => {
+      let page = $('#page').val();
+      let id = $('#id-search').val();
+      let str = $('#string-search').val();
+      let int = $('#integer-search').val();
+      let startdate = $('#start-date').val();
+      let enddate = $('#end-date').val();
+      let float = $('#float-search').val();
+      let bool = $('#boolean-search').val();
+
+      $.ajax({
+        method: "GET",
+        url: `${API_URL}siswa`,
+        data: { page, id, str, int, startdate, enddate, float, bool },
+        dataType: 'json'
+      })
+        .done((result) => {
+          const data = result.data
+          let page = result.page
+          let pages = result.pages
+          let pagination = '';
+          let html = '';
+
+          console.log(`page:${page}, pages:${pages}`)
+
+          data.forEach(element => {
+            html += `
+            <tr>
+              <th scope="row">${element.id}</th>
+              <td>${element.stringd}</td>
+              <td>${element.integerd}</td>
+              <td>${element.floatd}</td>
+              <td>${element.dated}</td>
+              <td>${element.booleand}</td>
+              <td>
+                <button class="btn btn-success btn-edit" type="button" data-id="${element.id}">Edit</button>
+                <button class="btn btn-danger btn-delete" type="button" data-id="${element.id}">Delete</button>
+              </td>
+            </tr>
+            `
+          });
+
+          if (page == 1) {
+            pagination += `<li class="page-item prevoius disabled" pageid="${page - 1}"><a class="page-link" href="#">Previous</a></li>\n`;
+          } else {
+            pagination += `<li class="page-item previous" pageid="${page - 1}"><a class="page-link" href="#">Previous</a></li>\n`;
+          }
+
+          for (i = 1; i <= pages; i++) {
+            if (i == page) {
+              pagination += `<li class="page-item active" pageid="${i}"><a class="page-link" href="#">${i}</a></li>\n`;
+            } else {
+              pagination += `<li class="page-item" pageid="${i}"><a class="page-link" href="#">${i}</a></li>\n`;
+            }
+          }
+          if (page == Number(pages)) {
+            pagination += `<li class="page-item next disabled" pageid="${page + 1}"><a class="page-link" href="#">Next</a></li>\n`;
+          } else {
+            pagination += `<li class="page-item next" pageid="${page + 1}"><a class="page-link" href="#">Next</a></li>\n`;
+          }
+
+          $('table tbody').html(html)
+          $('nav ul').html(pagination)
+        })
+        .fail(function (jqXHR, textStatus) {
+          alert("Request failed: " + textStatus);
+        });
+    }
+
+    const editData = (id) => {
+      $.ajax({
+        method: "GET",
+        url: `${API_URL}siswa/${id}`,
+        dataType: 'json'
+      })
+        .done(result => {
+          let html = ''
+          result.forEach(element => {
+            $('#id-edit').val(element.id)
+            $('#string-edit').val(element.stringd)
+            $('#integer-edit').val(element.integerd)
+            $('#float-edit').val(element.floatd)
+            $('#date-edit').val(element.dated)
+            $('#boolean-edit').val(element.booleand)
+          })
+        })
+        .fail(function (jqXHR, textStatus) {
+          alert("Request failed: " + textStatus);
+        });
+    }
+
+    const updateData = (id, stringd, integerd, floatd, dated, booleand) => {
+      $.ajax({
+        method: "PUT",
+        url: `${API_URL}siswa/${id}`,
+        data: { stringd, integerd, floatd, dated, booleand },
+        dataType: 'json'
+      })
+        .done(function (msg) {
+          loadData()
+        })
+        .fail(function (jqXHR, textStatus) {
+          alert("Request failed: " + textStatus);
+        });
+    }
+
+    const addData = (breadd) => {
+      $.ajax({
+        method: "POST",
+        url: `${API_URL}siswa`,
+        data: breadd
+      })
+        .done(function (msg) {
+          loadData()
+          $('.form-control').text('');
+        })
+        .fail(function (jqXHR, textStatus) {
+          alert("Request failed: " + textStatus);
+        });
+    }
+
+    const deleteData = (id) => {
+      $.ajax({
+        method: "DELETE",
+        url: `${API_URL}siswa/${id}`
+      })
+        .done(function (msg) {
+          loadData();
+        })
+        .fail(function (jqXHR, textStatus) {
+          alert("Request failed: " + textStatus);
+        });
+    }
+  </script>
+</body>
+
+</html>
