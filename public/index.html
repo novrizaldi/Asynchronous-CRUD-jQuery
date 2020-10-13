@@ -10,120 +10,123 @@
 
 <body class="margin">
 
-    <form action="" id="form-search" method="GET">
-      <input type="hidden" id="page" name="page" value="1">
-      <h2>BREAD (browse, read , edit, add, delete)</h2>
-      <h3> Filters</h3>
-      <div class="row">
-        <div class="col">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="id" name="checkId">
-            <label class="form-check-label" for="id">
-              ID
-            </label>
-          </div>
-        </div>
-
-        <div class="col-10">
-          <div class="form-group">
-            <input type="text" name="id" class="form-control" id="id-search" placeholder="ID" value="">
-          </div>
+  <form action="" id="form-search" method="GET">
+    <input type="hidden" id="page" name="page" value="1">
+    <h2>BREAD (browse, read , edit, add, delete)</h2>
+    <h3> Filters</h3>
+    <div class="row">
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="id" name="checkId">
+          <label class="form-check-label" for="id">
+            ID
+          </label>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col">
-          <div class="form-check">
-            <input class="form-check-input" name="checkString" type="checkbox" id="string">
-            <label class="form-check-label" name="checkString" for="checkString">
-              String
-            </label>
-          </div>
-        </div>
-        <div class="col-10">
-          <div class="form-group">
-            <input type="text" name="string" class="form-control" id="string-search" placeholder="String">
-          </div>
+      <div class="col-10">
+        <div class="form-group">
+          <input type="text" name="id" class="form-control" id="id-search" placeholder="ID" value="">
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="checkInteger" id="checkInteger">
-            <label class="form-check-label" for="integer">
-              Integer
-            </label>
-          </div>
-        </div>
-        <div class="col-sm-10">
-          <div class="form-group">
-            <input type="number" class="form-control" id="integer-search" name="integer" placeholder="Integer">
-          </div>
+    <div class="row">
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" name="checkString" type="checkbox" id="string">
+          <label class="form-check-label" name="checkString" for="checkString">
+            String
+          </label>
         </div>
       </div>
+      <div class="col-10">
+        <div class="form-group">
+          <input type="text" name="string" class="form-control" id="string-search" placeholder="String">
+        </div>
+      </div>
+    </div>
 
-      <div class="row">
-        <div class="col">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="checkFloat" id="checkFloat">
-            <label class="form-check-label" for="checkFloat">
-              Float
-            </label>
-          </div>
-        </div>
-        <div class="col-10">
-          <div class="form-group">
-            <input type="text" class="form-control" id="float-search" name="float" placeholder="Float">
-          </div>
+    <div class="row">
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="checkInteger" id="checkInteger">
+          <label class="form-check-label" for="integer">
+            Integer
+          </label>
         </div>
       </div>
+      <div class="col-sm-10">
+        <div class="form-group">
+          <input type="number" class="form-control" id="integer-search" name="integer" placeholder="Integer">
+        </div>
+      </div>
+    </div>
 
-      <div class="row">
-        <div class="col-2">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="checkDate" id="checkDate">
-            <label class="form-check-label" for="date">
-              Date
-            </label>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="form-group">
-            <input type="date" class="form-control" name="startDate" id="start-date" placeholder="masukan date">
-          </div>
-        </div>
-        <div class="w-100"></div>
-        <p class="col offset-2">to</p>
-        <div class="w-100"></div>
-        <div class="col-3 offset-2">
-          <div class="form-group">
-            <input type="date" class="form-control" name="endDate" id="end-date" placeholder="masukan date">
-          </div>
+    <div class="row">
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="checkFloat" id="checkFloat">
+          <label class="form-check-label" for="checkFloat">
+            Float
+          </label>
         </div>
       </div>
+      <div class="col-10">
+        <div class="form-group">
+          <input type="text" class="form-control" id="float-search" name="float" placeholder="Float">
+        </div>
+      </div>
+    </div>
 
-      <div class="row">
-        <div class="col">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="checkBool" id="boolean">
-            <label class="form-check-label" for="boolean">
-              Boolean
-            </label>
-          </div>
-        </div>
-        <div class="col-10">
-          <div class="form-group">
-            <select name="boolean" id="boolean-search" class="form-control">
-              <option selected disabled> choose the boolean</option>
-              <option name="boolean" class="form-control" value="True">True</option>
-              <option name="boolean" class="form-control" value="False">False</option>
-            </select>
-          </div>
+    <div class="row">
+      <div class="col-2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="checkDate" id="checkDate">
+          <label class="form-check-label" for="date">
+            Date
+          </label>
         </div>
       </div>
-      <button type="submit" class="btn btn-success">search</button>
-    </form>
+      <div class="col-3">
+        <div class="form-group">
+          <input type="date" class="form-control" name="startDate" id="start-date" placeholder="masukan date">
+        </div>
+      </div>
+      <div class="w-100"></div>
+      <p class="col offset-2">to</p>
+      <div class="w-100"></div>
+      <div class="col-3 offset-2">
+        <div class="form-group">
+          <input type="date" class="form-control" name="endDate" id="end-date" placeholder="masukan date">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="checkBool" id="boolean">
+          <label class="form-check-label" for="boolean">
+            Boolean
+          </label>
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="form-group">
+          <select name="boolean" id="boolean-search" class="form-control">
+            <option selected disabled> choose the boolean</option>
+            <option name="boolean" class="form-control" value="True">True</option>
+            <option name="boolean" class="form-control" value="False">False</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success">search</button>
+    <a href="/">
+      <button type="button" class="btn btn-dark " id="reset">Reset</button>
+    </a>
+  </form>
 
   <br> <br>
 
@@ -238,9 +241,41 @@
     </div>
     <button type="submit" class="btn btn-success btn-change">update</button>
   </form>
+  <!--not found Modal start-->
+  <div class="modal fade" id="notFoundModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-md modal-dialog-centered" role="document" aria-labelledby="myExtraLargeModalLabel"
+      aria-hidden="true">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel" text-align:center>Data tidak ditemukan</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <p>Data yang Anda cari tidak ditemukan, silahkan coba lagi</p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+        </div>
+      </div> <!-- modal content-->
+    </div>
+  </div>
+  <!-- not fount modal end -->
+  <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 
   <script type="text/javascript">
-    const API_URL = 'http://localhost:3000/api/'
+    const API_URL = 'http://localhost:3007/api/'
 
     $(document).ready(() => {
       loadData();
@@ -278,10 +313,10 @@
         editData($(this).attr('data-id'));
       })
 
-      $('nav').on("click", 'li', function(event) { //pakai function, karna arrow function tidak bisa membaca (this)
+      $('nav').on("click", 'li', function (event) { //pakai function, karna arrow function tidak bisa membaca (this)
         event.preventDefault();
         console.log('test click li')
-        console.log('nilai pageid:',$(this).attr('pageid'))
+        console.log('nilai pageid:', $(this).attr('pageid'))
         $('#page').val($(this).attr('pageid'))
         loadData();
 
@@ -290,6 +325,10 @@
         event.preventDefault();
         $('#page').val(1);
         loadData()
+      })
+
+      $('#reset').on('click', function (e) {
+        loadData();
       })
     })
 
@@ -315,9 +354,8 @@
           let pages = result.pages
           let pagination = '';
           let html = '';
-
-          console.log(`page:${page}, pages:${pages}`)
-
+          // console.log(`page:${page}, pages:${pages}`)
+          // console.log('data load', data);
           data.forEach(element => {
             html += `
             <tr>
@@ -357,8 +395,9 @@
           $('table tbody').html(html)
           $('nav ul').html(pagination)
         })
-        .fail(function (jqXHR, textStatus) {
-          alert("Request failed: " + textStatus);
+        .fail(function (err) {
+          $("#notFoundModal").modal('show');
+          console.log('Data yang diminta tidak ditemukan')
         });
     }
 

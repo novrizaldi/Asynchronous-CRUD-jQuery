@@ -14,32 +14,34 @@ module.exports = function (pool) {
     let isSearch = false;
     let searchFinal = ""
     let dataSearch = []
+    const {id, str, int, startdate, enddate, float, bool} = req.query
 
-    if (req.query.id) {
-      dataSearch.push(`id = ${req.query.id}`)
+    if (id) {
+      dataSearch.push(`id = ${id}`)
       isSearch = true
     }
-    if (req.query.str) {
-      dataSearch.push(`stringd like '%${req.query.str}%'`)
+    if (str) {
+      dataSearch.push(`stringd ilike '%${str}%'`)
       isSearch = true
     }
-    if (req.query.int) {
-      dataSearch.push(`integerd = '${req.query.int}'`)
+    if (int) {
+      dataSearch.push(`integerd = '${int}'`)
       isSearch = true
     }
-    if (req.query.startdate && req.query.enddate) {
-      dataSearch.push(`dated BETWEEN '${req.query.startdate}' AND '${req.query.enddate}'`)
+    if (startdate && enddate) {
+      dataSearch.push(`dated BETWEEN '${startdate}' AND '${enddate}'`)
       isSearch = true
     }
-    if (req.query.float) {
-      dataSearch.push(`floatd = '${req.query.float}'`)
+    if (float) {
+      dataSearch.push(`floatd = '${float}'`)
       isSearch = true
     }
-    if (req.query.bool) {
-      dataSearch.push(`booleand = '${req.query.bool}'`)
+    if (bool) {
+      dataSearch.push(`booleand = '${bool}'`)
       isSearch = true
     }
 
+    console.log('data', dataSearch);
     if (isSearch) {
       searchFinal += ` WHERE ${dataSearch.join(' AND ')}`
     }
@@ -61,6 +63,7 @@ module.exports = function (pool) {
 
       let sql = `select * from breadd ${searchFinal} ORDER BY id limit $1 offset $2` //jquery harus pakai $(dollar)
       pool.query(sql, [limit, offset], (err, data) => {
+        console.log('yg dicari ini', sql);
         if (err) {
           return res.json(err)
         } else if (data.rows == 0) {
